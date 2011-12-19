@@ -1,0 +1,22 @@
+﻿body
+{
+}
+.allow-float
+{
+	clear: none !important;
+}
+/* 允许该元素浮动 */
+.stop-float
+{
+	clear: both !important;
+}
+/* 阻止该元素浮动 */
+.float-left
+{
+	float: left;
+}
+/*浮动到左边*/
+.big-font
+{
+	font-size: x-large;
+}
