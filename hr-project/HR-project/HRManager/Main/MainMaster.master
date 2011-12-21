@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMaster.master.cs" Inherits="MainMaster_" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="css/css_master.css" rel="stylesheet" type="text/css" />   
+    <title>HR管理系统</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="page">
+        <div id="user-state">
+            <p>
+                欢迎使用，<a href="#">范先生</a>&nbsp·&nbsp<a> 注销</a>&nbsp·&nbsp<a> 退出</a></p>
+        </div>
+        <div id="main-top">
+            <h1 id="top-p">
+                人力资源管理系统
+            </h1>
+            <div id="top-right">
+            </div>
+            <div id="mainMenu">
+                <ul>
+                    <li><a href="#">人事管理</a></li>
+                    <li><a href="#">薪酬管理</a></li>
+                    <li><a href="#">绩效考核</a></li>
+                    <li><a href="#">人力资源</a></li>
+                    <li><a href="#">招聘管理</a></li>
+                    <li><a href="#">培训管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="top-content">
+        </div>
+        <div id="location">
+            <p>
+                当前位置：<a href="#">主页</a>-><a href="#">薪酬管理</a></p>
+        </div>
+        <div id="leftContent">
+            <asp:ContentPlaceHolder ID="leftMenuPanel" runat="server">
+                <div id="leftMenu">
+                </div>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="rightContent">
+            <asp:ContentPlaceHolder ID="contentPanel" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="buttom-line">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+F:\hr-project\ORM\bin\Debug\ORM.dll
+F:\hr-project\ORM\bin\Debug\ORM.pdb
+F:\hr-project\ORM\obj\Debug\ResolveAssemblyReference.cache
+F:\hr-project\ORM\obj\Debug\ORM.dll
+F:\hr-project\ORM\obj\Debug\ORM.pdb
+F:\hr-project\ORM\bin\Debug\ORM.dll.config
+D:\项目文件\hr-project\ORM\bin\Debug\ORM.dll.config
+D:\项目文件\hr-project\ORM\bin\Debug\ORM.dll
+D:\项目文件\hr-project\ORM\bin\Debug\ORM.pdb
+D:\项目文件\hr-project\ORM\obj\Debug\ResolveAssemblyReference.cache
+D:\项目文件\hr-project\ORM\obj\Debug\ORM.dll
+D:\项目文件\hr-project\ORM\obj\Debug\ORM.pdb

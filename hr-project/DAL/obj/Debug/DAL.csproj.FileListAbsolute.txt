@@ -1,0 +1,14 @@
+F:\hr-project\DAL\bin\Debug\DAL.dll
+F:\hr-project\DAL\bin\Debug\DAL.pdb
+F:\hr-project\DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\hr-project\DAL\obj\Debug\DAL.dll
+F:\hr-project\DAL\obj\Debug\DAL.pdb
+F:\hr-project\DAL\bin\Debug\ORM.dll
+F:\hr-project\DAL\bin\Debug\ORM.pdb
+D:\项目文件\hr-project\DAL\bin\Debug\DAL.dll
+D:\项目文件\hr-project\DAL\bin\Debug\DAL.pdb
+D:\项目文件\hr-project\DAL\bin\Debug\ORM.dll
+D:\项目文件\hr-project\DAL\bin\Debug\ORM.pdb
+D:\项目文件\hr-project\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\项目文件\hr-project\DAL\obj\Debug\DAL.dll
+D:\项目文件\hr-project\DAL\obj\Debug\DAL.pdb
