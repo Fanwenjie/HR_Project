@@ -86,11 +86,7 @@ function createTable(){
 **********************************************************************************************************************/ 
 
 function initCreateTable(){
-   var storeType = new Ext.data.SimpleStore({//定义组合框中显示的数据源
-			    fields: ['type', 'value'],
-			    data : [['所有','0'],['未提交','1'],['未审核','2'],['已通过','3'],['未通过','4'],
-			            ['已发放','5'],['未发放','6']]
-		    });//需修改
+   
    var tbar = new Ext.Toolbar({
               items: [
                           {xtype: 'tbspacer'},
@@ -129,10 +125,11 @@ function initCreateTable(){
                              triggerAction:'all',
                              mode:'local',
                              width:100,
-                             displayField:'type',//需修改
-                             valueField:'value',//需修改
-                             store:storeType,//需修改
-                             value:'0',//需修改
+                             displayField:'state',
+                             valueField:'value',
+                             store:store_State,
+                             value:'0',
+                             editable :false,
                              forceSelection:true,
                              handleHeight:10
                           },
@@ -207,7 +204,8 @@ function initCreateTable(){
                                   {
                                      id:'btn_refresh',
                                      xtype:'button',
-                                     text:'刷新'
+                                     text:'刷新',
+                                     handler:function(){salaryStore.relaod();}
                                   },
                                   '-'
                      ]
@@ -215,6 +213,7 @@ function initCreateTable(){
 //sal_id""sal_name""sal_year""sal_month""sal_madetime""sal_isexamine""sal_examiner""sal_examinetime""sal_isgrant""sal_granttime""sresult":[]}//数据格式
 //********************************日期转化函数********************************//
    function dateConvert(value){return eval("new " + value.substr(1, value.length - 2)).format(strDateFormat);}
+   
    //********************************数据模型********************************//
 	var salaryTable = Ext.data.Record.create([
 		    {name: 'name',mapping:'sal_name'},
@@ -229,8 +228,9 @@ function initCreateTable(){
 		    {name: 'id',mapping:'sal_id',type:'int'}
 	        ]);
 	var salaryStore=new Ext.data.JsonStore({
-	    autoLoad: {params:{start:0,limit:_limit}},
+	    autoLoad: {params:{start:0,limit:_limit},callback:store_loadCallback},
 	    url:'../Ajax/salary.ashx?type=select',
+	    successProperty:'success',
         totalProperty:'total',
         fields:[
 		    {name: 'name',mapping:'sal_name'},
@@ -245,11 +245,13 @@ function initCreateTable(){
 		    {name: 'id',mapping:'sal_id',type:'int'}
 	        ],
         root:'data',
-        method:'post',
-        failure:function(form,ac){Ext.MessageBox.alert(ac.failureType,Ext.util.JSON.decode(ac.responseText)['error'])},
-        success:function(form,action){Ext.MessageBox.alert('gege');}
+        method:'post' 
 	});
-   //表格
+	function store_loadCallback(r,options,success){
+        if(!success) {Ext.Msg.alert('Error',Ext.util.JSON.decode(res.responseText)['error'])}
+	}
+	
+   //********************************表格********************************//
    var grid = new Ext.grid.GridPanel({
       footer:true,
       header:false,
@@ -266,7 +268,7 @@ function initCreateTable(){
        store:salaryStore,
        columns: [//配置表格列
                 new Ext.grid.RowNumberer(),
-				{header: '表名',  dataIndex: 'name', sortable: true},
+				{header: '表名',  dataIndex: 'name',width:150, sortable: true},
 				{header: '年度',  dataIndex: 'year', sortable: true},
 				{header: '月度',  dataIndex: 'mouth', sortable: true},
 				{header: '造表时间',  dataIndex: 'createTime', sortable: true},
@@ -280,6 +282,8 @@ function initCreateTable(){
              msg : '下载中...' 
         }
    });
+   
+   //********************************窗口主控件********************************//
     var form = new Ext.Panel({
       header:false,
       cls:'big-font',

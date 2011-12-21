@@ -1,5 +1,0 @@
-D:\项目文件\HR项目薪酬部分\BAL\bin\Debug\BAL.dll
-D:\项目文件\HR项目薪酬部分\BAL\bin\Debug\BAL.pdb
-D:\项目文件\HR项目薪酬部分\BAL\obj\Debug\ResolveAssemblyReference.cache
-D:\项目文件\HR项目薪酬部分\BAL\obj\Debug\BAL.dll
-D:\项目文件\HR项目薪酬部分\BAL\obj\Debug\BAL.pdb
